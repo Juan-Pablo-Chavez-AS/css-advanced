@@ -14,14 +14,6 @@ body {
     position: relative;
 }
 
-.tooltip-div-x {
-    flex-direction: row;
-}
-
-.tooltip-div-y {
-    flex-direction: column;
-}
-
 .tooltip {
     display: none;
     justify-content: center;
@@ -37,7 +29,6 @@ body {
     border-radius: 5px;
     color: white;
     font-size: 14px;
-    white-space: nowrap;
     z-index: 1;
 }
 
@@ -93,7 +84,6 @@ body {
     border-radius: 5px;
     color: white;
     font-size: 14px;
-    white-space: nowrap;
     z-index: 1;
 }
 
