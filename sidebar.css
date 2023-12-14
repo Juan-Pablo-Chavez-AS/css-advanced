@@ -1,0 +1,99 @@
+body {
+    display: grid;
+    grid-template: 30px 1fr 30px / 35px 300px 1fr;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #aaa;
+}
+
+.sidebar {
+    height: 100%;
+    grid-row: 2 / -1;
+    grid-column: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    background-color: coral;
+}
+
+.icons {
+    height: 100%;
+    width: 35px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ccc;
+}
+
+.icon-item {
+    padding: 20px 5px;
+    font-size: 1.2rem;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    grid-column: 1 ;
+    grid-row: 1;
+}
+
+.collapsable {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: #888;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+    z-index: -1;
+    box-shadow: 2px 0px 5px 0px #222;
+}
+
+.collapsable span {
+    padding: 20px 5px;
+    font-size: 1.2rem;
+}
+
+.checkbox-container:has(:checked) + .collapsable {
+    transform: translateX(0);
+}
+
+#collapseButton {
+    display: none;
+}
+
+#collapseLabel {
+    position: absolute;
+}
+
+#collapseLabel::after {
+    content: "";
+    background-image: url("right-arrow.png");
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: transform 0.5s ease-out;
+}
+
+#collapseButton:checked + #collapseLabel::after {
+    transform: rotate(180deg);
+}
+
+.header {
+    background-color: white;
+    grid-column: 2 / -1;
+    text-align: center;
+}
+
+.footer {
+    background-color: white;
+    grid-column: 2 / -1;
+    grid-row: -2;
+    text-align: center;
+}
